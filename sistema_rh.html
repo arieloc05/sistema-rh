@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)file:///Users/arielosmac/Downloads/sistema_rh_1.html -->
-<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="es">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sistema RH — Grupo WJA</title>
 <style>
@@ -64,18 +64,18 @@ tr:hover td{background:#fafafa}
 <body>
 
 <div class="topbar">
-  <div class="topbar-title">📋 Sistema RH — Grupo WJA</div>
-  <div id="sync-status" class="topbar-sync sync-err">Error de conexion — revisa el script</div>
-  <button class="btn btn-sm" onclick="loadAll()" style="margin-left:8px">↻ Actualizar</button>
+  <div class="topbar-title">&#128203; Sistema RH — Grupo WJA</div>
+  <div id="sync-status" class="topbar-sync sync-loading">Conectando...</div>
+  <button class="btn btn-sm" onclick="loadAll()" style="margin-left:8px">&#8635; Actualizar</button>
 </div>
 
 <div class="container">
 <div class="nav">
-  <button class="nav-btn active" onclick="showSection(&#39;dashboard&#39;)" id="nav-dashboard">☷ Dashboard</button>
-  <button class="nav-btn" onclick="showSection(&#39;trabajadores&#39;)" id="nav-trabajadores">👤 Trabajadores</button>
-  <button class="nav-btn" onclick="showSection(&#39;lista&#39;)" id="nav-lista">✅ Pasar lista</button>
-  <button class="nav-btn" onclick="showSection(&#39;centros&#39;)" id="nav-centros">🏢 Centros de trabajo</button>
-  <button class="nav-btn" onclick="showSection(&#39;reportes&#39;)" id="nav-reportes">📊 Reportes</button>
+  <button class="nav-btn active" onclick="showSection('dashboard')" id="nav-dashboard">&#9783; Dashboard</button>
+  <button class="nav-btn" onclick="showSection('trabajadores')" id="nav-trabajadores">&#128100; Trabajadores</button>
+  <button class="nav-btn" onclick="showSection('lista')" id="nav-lista">&#9989; Pasar lista</button>
+  <button class="nav-btn" onclick="showSection('centros')" id="nav-centros">&#127970; Centros de trabajo</button>
+  <button class="nav-btn" onclick="showSection('reportes')" id="nav-reportes">&#128202; Reportes</button>
 </div>
 
 <div id="sec-dashboard" class="section active">
@@ -94,7 +94,7 @@ tr:hover td{background:#fafafa}
 
 <div id="sec-trabajadores" class="section">
   <div style="display:flex;gap:8px;margin-bottom:14px;align-items:center;flex-wrap:wrap">
-    <button class="btn btn-primary btn-sm" onclick="showForm(&#39;add&#39;)">+ Alta de trabajador</button>
+    <button class="btn btn-primary btn-sm" onclick="showForm('add')">+ Alta de trabajador</button>
     <input type="text" placeholder="Buscar por nombre o RFC..." style="max-width:260px" id="search-worker" oninput="renderWorkerList()">
   </div>
   <div id="worker-list"></div>
@@ -133,14 +133,14 @@ tr:hover td{background:#fafafa}
       <div><label>Fecha inicio</label><input type="date" id="rep-inicio"></div>
       <div><label>Fecha fin</label><input type="date" id="rep-fin"></div>
     </div>
-    <button class="btn btn-primary btn-sm" onclick="generarReporte()">🔍 Generar reporte</button>
+    <button class="btn btn-primary btn-sm" onclick="generarReporte()">&#128269; Generar reporte</button>
   </div>
   <div id="reporte-result"></div>
 </div>
 </div>
 
 <script>
-const SCRIPT_URL='https://rh-proxy.ari-61d.workers.dev';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxTalNt0mKiSeATF8l5UO99u2VkjWuWzxdOqmxznTWGtXyLuv2OF2qq2CLc4E3AIPOB/exec';
 const AL={A:'Asistencia',F:'Falta',D:'Doblete',D12:'Doblete 12h',V:'Vacaciones',I:'Incapacidad'};
 const AC={A:'green',F:'red',D:'blue',D12:'purple',V:'amber',I:'gray'};
 const AVC=['#B5D4F4:#0C447C','#9FE1CB:#085041','#CECBF6:#3C3489','#F5C4B3:#712B13','#FAC775:#633806'];
@@ -489,6 +489,5 @@ function generarReporte(){
 initF();
 loadAll();
 </script>
-
-
-</body></html>
+</body>
+</html>
